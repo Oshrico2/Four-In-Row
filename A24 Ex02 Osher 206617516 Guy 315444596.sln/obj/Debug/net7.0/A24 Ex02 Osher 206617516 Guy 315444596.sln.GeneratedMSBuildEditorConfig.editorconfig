@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = A24_Ex02_Osher_206617516_Guy_315444596.sln
+build_property.RootNamespace = A24_Ex02_Osher_206617516_Guy_315444596.sln
+build_property.ProjectDir = /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln
+build_property._RazorSourceGeneratorDebug = 

@@ -1,0 +1,26 @@
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/appsettings.Development.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/appsettings.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.deps.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.runtimeconfig.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.dll
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/bin/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.pdb
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.csproj.AssemblyReference.cache
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.GeneratedMSBuildEditorConfig.editorconfig
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.AssemblyInfoInputs.cache
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.AssemblyInfo.cs
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.csproj.CoreCompileInputs.cache
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.MvcApplicationPartsAssemblyInfo.cache
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets/msbuild.A24 Ex02 Osher 206617516 Guy 315444596.sln.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets/msbuild.build.A24 Ex02 Osher 206617516 Guy 315444596.sln.props
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.A24 Ex02 Osher 206617516 Guy 315444596.sln.props
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.A24 Ex02 Osher 206617516 Guy 315444596.sln.props
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets.pack.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets.build.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/staticwebassets.development.json
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/scopedcss/bundle/A24 Ex02 Osher 206617516 Guy 315444596.sln.styles.css
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.dll
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/refint/A24 Ex02 Osher 206617516 Guy 315444596.sln.dll
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.pdb
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/A24 Ex02 Osher 206617516 Guy 315444596.sln.genruntimeconfig.cache
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/A24 Ex02 Osher 206617516 Guy 315444596.sln/obj/Debug/net7.0/ref/A24 Ex02 Osher 206617516 Guy 315444596.sln.dll
