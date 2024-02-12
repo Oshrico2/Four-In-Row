@@ -5,6 +5,7 @@
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/bin/Debug/net7.0/FourInRow.runtimeconfig.json
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/bin/Debug/net7.0/FourInRow.dll
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/bin/Debug/net7.0/FourInRow.pdb
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/bin/Debug/net7.0/Ex02.ConsoleUtils.dll
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.csproj.AssemblyReference.cache
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.GeneratedMSBuildEditorConfig.editorconfig
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.AssemblyInfoInputs.cache
@@ -19,6 +20,7 @@
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/staticwebassets.build.json
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/staticwebassets.development.json
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/scopedcss/bundle/FourInRow.styles.css
+/Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.csproj.CopyComplete
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.dll
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/refint/FourInRow.dll
 /Users/osher/Projects/A24 Ex02 Osher206617516 Guy 315444596/FourInRow/obj/Debug/net7.0/FourInRow.pdb
