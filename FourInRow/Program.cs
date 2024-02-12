@@ -49,7 +49,7 @@ public class Program
             input = 0;
             while (!i_Game.IsValidMove(input, playerSign))
             {
-                Console.WriteLine($"Player{playerSign} enter a column please");
+                Console.WriteLine($"Player{playerSign}, enter a column please: ");
                 input = GameUI.GetNumberInput(1, i_Game.BoardMatrix.GetLength(1));
             }
             input = 0;
