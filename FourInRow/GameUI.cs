@@ -15,7 +15,7 @@ namespace FourInRow
             i_Cols = GetNumberInput(4, 8);
         }
 
-        private static int GetNumberInput(int i_Min, int i_Max)
+        public static int GetNumberInput(int i_Min, int i_Max)
         {
             int input;
             while (!int.TryParse(Console.ReadLine(), out input) || input < i_Min || input > i_Max)
