@@ -2,16 +2,23 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="FourInRow/Program.cs">
     <Files>
-      <File FileName="FourInRow/Program.cs" Line="7" Column="54" />
+      <File FileName="FourInRow/Program.cs" Line="11" Column="36" />
+      <File FileName="FourInRow/GameUI.cs" Line="21" Column="1" />
+      <File FileName="FourInRow/GameController.cs" Line="67" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="A24 Ex02 Osher 206617516 Guy 315444596">
             <Node name="FourInRow">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>i_Matrix.GetLength(0)</Value>
         </State>
       </Pad>
     </Pads>

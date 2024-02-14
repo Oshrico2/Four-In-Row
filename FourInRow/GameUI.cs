@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text;
-using Ex02.ConsoleUtils;
+//using Ex02.ConsoleUtils;
 
 namespace FourInRow
 {
-	public class GameUI
-	{
+    public class GameUI
+    {
         public static void GetBoardSize(out int i_Rows, out int i_Cols)
         {
             Console.WriteLine("Enter the number of rows (min 4, max 8): ");
@@ -18,8 +18,14 @@ namespace FourInRow
         public static int GetNumberInput(int i_Min, int i_Max)
         {
             int input;
-            while (!int.TryParse(Console.ReadLine(), out input) || input < i_Min || input > i_Max)
+            string inputStr;
+            while (!int.TryParse(inputStr = Console.ReadLine(), out input) || input < i_Min || input > i_Max)
             {
+                if (inputStr.ToLower() == "q")
+                {
+                    input = -1;
+                    break;
+                }
                 Console.WriteLine($"Please enter a number between {i_Min} and {i_Max}: ");
             }
             return input;
@@ -32,15 +38,15 @@ namespace FourInRow
             return input == "Y";
         }
 
-        public static void DisplayScreen(int [,] i_Matrix)
+        public static void DisplayScreen(int[,] i_Matrix)
         {
-            string equalSigns = new string('=', i_Matrix.GetLength(1) * 4 + 1) ;
+            string equalSigns = new string('=', i_Matrix.GetLength(1) * 4 + 1);
 
             Console.Clear();
 
-            for(int i = 1; i <= i_Matrix.GetLength(1); i++)
+            for (int i = 1; i <= i_Matrix.GetLength(1); i++)
             {
-                if(i == 1)
+                if (i == 1)
                 {
                     Console.Write("  1");
                     continue;
@@ -60,6 +66,18 @@ namespace FourInRow
             }
             Console.WriteLine();
         }
+
+        public static bool AskForAnotherGame()
+        {
+            bool askForAnotherGame = false;
+            Console.WriteLine("Would you like to play another game? (Y/N)");
+            string input = Console.ReadLine().ToUpper();
+            if (input == "Y")
+            {
+                askForAnotherGame = true;
+            }
+            Console.Clear();
+            return askForAnotherGame;
+        }
     }
 }
-
