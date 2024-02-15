@@ -155,13 +155,16 @@ namespace FourInRow
             Array.Clear(m_BoardMatrix, 0, m_BoardMatrix.Length);
         }
 
-        public bool MakeComputerMove()
+        public void MakeComputerMove()
         {
             bool o_FullCapacity;
             Random rand = new Random();
-            int columnRandomed = rand.Next(m_ColsOfBoard);
+            int columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
 
-            return IsValidMakeMove(columnRandomed, 2, out o_FullCapacity) ? true : MakeComputerMove();
+            while (!IsValidMakeMove(columnRandomed, 2, out o_FullCapacity) || o_FullCapacity)
+            {
+                columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
+            }
 
         }
 
