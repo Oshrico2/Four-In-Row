@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Common;
+using System.Numerics;
 
 namespace FourInRow
 {
@@ -63,7 +64,7 @@ namespace FourInRow
             }
             else
             {
-                fullCapacity = i_Column == 0 ? false : true;
+                fullCapacity = i_Column != 0;
             }
             return validColumn;
         }
@@ -114,15 +115,81 @@ namespace FourInRow
             return isGameOverSign;
         }
 
-        private bool IsWinner(int i_NumOfPlayer)
+        public bool IsWinner(int i_NumOfPlayer)
         {
-            return false;
+            bool isWinner = false;
+            // Check horizontal
+            for (int row = 0; row < m_RowsOfBoard; row++)
+            {
+                for (int col = 0; col < m_ColsOfBoard - 3; col++)
+                {
+                    if (m_BoardMatrix[row, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row, col + 1] == i_NumOfPlayer &&
+                        m_BoardMatrix[row, col + 2] == i_NumOfPlayer &&
+                        m_BoardMatrix[row, col + 3] == i_NumOfPlayer)
+                    {
+                        isWinner = true;
+                    }
+                }
+            }
+
+            // Check vertical
+            for (int row = 0; row < m_RowsOfBoard - 3; row++)
+            {
+                for (int col = 0; col < m_ColsOfBoard; col++)
+                {
+                    if (m_BoardMatrix[row, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 1, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 2, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 3, col] == i_NumOfPlayer)
+                    {
+                        isWinner = true;
+                    }
+                }
+            }
+
+            // Check diagonals (positive slope)
+            for (int row = 0; row < m_RowsOfBoard - 3; row++)
+            {
+                for (int col = 0; col < m_ColsOfBoard - 3; col++)
+                {
+                    if (m_BoardMatrix[row, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 1, col + 1] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 2, col + 2] == i_NumOfPlayer &&
+                        m_BoardMatrix[row + 3, col + 3] == i_NumOfPlayer)
+                    {
+                        isWinner = true;
+                    }
+                }
+            }
+
+            // Check diagonals (negative slope)
+            for (int row = 3; row < m_RowsOfBoard; row++)
+            {
+                for (int col = 0; col < m_ColsOfBoard - 3; col++)
+                {
+                    if (m_BoardMatrix[row, col] == i_NumOfPlayer &&
+                        m_BoardMatrix[row - 1, col + 1] == i_NumOfPlayer &&
+                        m_BoardMatrix[row - 2, col + 2] == i_NumOfPlayer &&
+                        m_BoardMatrix[row - 3, col + 3] == i_NumOfPlayer)
+                    {
+                        isWinner = true;
+                    }
+                }
+            }
+            if (isWinner)
+            {
+                IsQuit(i_NumOfPlayer == 1 ? 2 : 1);
+            }
+
+            return isWinner;
         }
+
 
         private bool IsDraw()
         {
-
             bool isFull = true;
+
             for (int i = 0; i < m_RowsOfBoard; i++)
             {
                 for (int j = 0; j < m_ColsOfBoard; j++)
@@ -139,6 +206,7 @@ namespace FourInRow
         private void IsQuit(int i_NumOfPlayer)
         {
             RestartGame();
+
             if (m_Player1.NumOfPlayer == i_NumOfPlayer)
             {
                 m_Player2.Winner();
@@ -158,6 +226,7 @@ namespace FourInRow
         public void MakeComputerMove()
         {
             bool o_FullCapacity;
+
             Random rand = new Random();
             int columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
 
@@ -165,35 +234,7 @@ namespace FourInRow
             {
                 columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
             }
-
         }
-
-        public class Player
-        {
-            private int m_Record, m_NumOfPlayer;
-
-            public int NumOfPlayer
-            {
-                get { return m_NumOfPlayer; }
-            }
-
-            public int Record
-            {
-                get { return m_Record; }
-            }
-
-            public Player(int i_NumOfPlayer)
-            {
-                m_NumOfPlayer = i_NumOfPlayer;
-                m_Record = 0;
-            }
-
-            public void Winner()
-            {
-                m_Record += 1;
-            }
-
-        }
-
     }
+ 
 }

@@ -126,6 +126,8 @@ public class Program
 
     public static void HandleGameOver(ref GameController i_Game, int playerSign)
     {
+        GameUI.DisplayScreen(i_Game.BoardMatrix);
+
         int gameOverSign = i_Game.IsGameOver(playerSign);
         bool askForAnotherGame = false;
         if (gameOverSign == 1)
