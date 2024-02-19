@@ -33,7 +33,7 @@ namespace FourInRow.UI
 
         public static bool ChooseOpponent()
         {
-            Console.WriteLine("Do you want to play against the computer? (Y/N)");
+            Console.WriteLine("Do you want to play against the computer? (Y/Any other key)");
             string input = Console.ReadLine().ToUpper();
             return input == "Y";
         }
@@ -70,12 +70,16 @@ namespace FourInRow.UI
         public static bool AskForAnotherGame()
         {
             bool askForAnotherGame = false;
-            Console.WriteLine("Would you like to play another game? (Y/N)");
+            Console.WriteLine("Would you like to play another game? (Y/Any other key)");
             string input = Console.ReadLine().ToUpper();
             if (input == "Y")
             {
                 askForAnotherGame = true;
             }
+            //else
+            //{
+            //    Environment.Exit(1);
+            //}
             Console.Clear();
             return askForAnotherGame;
         }

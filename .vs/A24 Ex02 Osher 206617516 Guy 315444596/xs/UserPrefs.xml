@@ -1,23 +1,26 @@
 ﻿<Properties StartupConfiguration="{214BCC44-FD74-489F-97B2-C67F662D23F7}|https">
-  <MonoDevelop.Ide.ItemProperties.FourInRow PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="FourInRow/GameController.cs">
     <Files>
-      <File FileName="FourInRow/GameController.cs" Line="35" Column="14" />
-      <File FileName="FourInRow/Program.cs" Line="120" Column="19" />
-      <File FileName="FourInRow/Player.cs" Line="31" Column="1" />
+      <File FileName="FourInRow/GameController.cs" Line="8" Column="12" />
+      <File FileName="FourInRow/Program.cs" Line="2" Column="1" />
+      <File FileName="FourInRow/Player.cs" Line="1" Column="26" />
+      <File FileName="FourInRow/GameUI.cs" Line="5" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="A24 Ex02 Osher 206617516 Guy 315444596" expanded="True" />
+          <Node name="A24 Ex02 Osher 206617516 Guy 315444596" expanded="True">
+            <Node name="FourInRow" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FourInRow PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

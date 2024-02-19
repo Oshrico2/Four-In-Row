@@ -28,21 +28,24 @@ public class Program
         if (!i_Game.GameMode)
         {
             Console.WriteLine("\nStart a two player game Press q whenever you want to quit.");
-            while (PlayMoveOffMode(ref i_Game)) ;
+            while (true)
+            {
+                PlayMoveOffMode(ref i_Game);
+            }
         }
         else
         {
             Console.WriteLine("\nStart a one player game Press q whenever you want to quit.");
-            while (PlayMoveOnMode(ref i_Game)) ;
+            while (true)
+            {
+                PlayMoveOnMode(ref i_Game);
+            }
         }
-        Console.WriteLine("Thank you for playing");
-        Environment.Exit(1);
     }
 
     public static bool PlayMoveOffMode(ref GameController i_Game)
     {
         int playerSign = 1;
-        int oppositePlayerSign;
         int input;
         bool playAnotherMove = true;
         bool o_FullCapacity;
@@ -63,20 +66,7 @@ public class Program
             }
             input = 0;
             GameUI.DisplayScreen(i_Game.BoardMatrix);
-            if (i_Game.IsEmptyBoardMatrix()) //someone quit
-            {
-                oppositePlayerSign = playerSign == 1 ? 2 : 1;
-                Console.WriteLine($"Player {oppositePlayerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
-                if (GameUI.AskForAnotherGame())
-                {
-                    PlayNewGame(ref i_Game);
-                }
-                else
-                {
-                    playAnotherMove = false;
-                    break;
-                }
-            }
+            
             HandleGameOver(ref i_Game, playerSign);
             playerSign++;
         }
@@ -101,18 +91,18 @@ public class Program
             input = GameUI.GetNumberInput(1, i_Game.BoardMatrix.GetLength(1));
         }
         HandleGameOver(ref i_Game, 1);
-        if (i_Game.IsEmptyBoardMatrix())
-        {
-            Console.WriteLine($"Computer Win!\nState of record:\nPlayer : {i_Game.Player1.Record}\tComputer : {i_Game.Player2.Record}");
-            if (GameUI.AskForAnotherGame())
-            {
-                PlayNewGame(ref i_Game);
-            }
-            else
-            {
-                playAnotherMove = false;
-            }
-        }
+        //if (i_Game.IsEmptyBoardMatrix())
+        //{
+        //    Console.WriteLine($"Computer Win!\nState of record:\nPlayer : {i_Game.Player1.Record}\tComputer : {i_Game.Player2.Record}");
+        //    if (GameUI.AskForAnotherGame())
+        //    {
+        //        PlayNewGame(ref i_Game);
+        //    }
+        //    else
+        //    {
+        //        playAnotherMove = false;
+        //    }
+        //}
         if (playAnotherMove)
         {
             i_Game.MakeComputerMove();
@@ -125,28 +115,45 @@ public class Program
 
     public static void HandleGameOver(ref GameController i_Game, int playerSign)
     {
+        int oppositePlayerSign;
+        bool gameFinshed = false;
+        bool askForAnotherGame = false;
+        int gameOverSign;
+
         GameUI.DisplayScreen(i_Game.BoardMatrix);
 
-        int gameOverSign = i_Game.IsGameOver(playerSign);
-        bool askForAnotherGame = false;
+        if (i_Game.IsEmptyBoardMatrix()) //someone quit
+        {
+            oppositePlayerSign = playerSign == 1 ? 2 : 1;
+            Console.WriteLine($"Player {oppositePlayerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
+            askForAnotherGame = GameUI.AskForAnotherGame();
+            gameFinshed = true;
+        }
+
+        gameOverSign = i_Game.IsGameOver(playerSign);
+
         if (gameOverSign == 1)
         {
             Console.WriteLine($"Player {playerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
             askForAnotherGame = GameUI.AskForAnotherGame();
+            gameFinshed = true;
         }
         else if (gameOverSign == 2)
         {
             Console.WriteLine($"Nobody Win, State of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
             askForAnotherGame = GameUI.AskForAnotherGame();
+            gameFinshed = true;
         }
         if (askForAnotherGame)
         {
             GameUI.DisplayScreen(i_Game.BoardMatrix);
             PlayNewGame(ref i_Game);
         }
-        else
+        if (gameFinshed)
         {
+            Console.WriteLine("Thank you for playing");
             Environment.Exit(1);
         }
+
     }
 }

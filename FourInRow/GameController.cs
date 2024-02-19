@@ -53,8 +53,8 @@ namespace FourInRow.Logic
             bool validColumn = false;
             if (i_Column < 0)
             {
-                isQuit(i_NumOfPlayer);
                 validColumn = true;
+                isQuit(i_NumOfPlayer);
             }
             else if (i_Column != 0 && updateMatrix(i_Column, i_NumOfPlayer))
             {
