@@ -2,7 +2,7 @@
 using System.Text;
 //using Ex02.ConsoleUtils;
 
-namespace FourInRow
+namespace FourInRow.UI
 {
     public class GameUI
     {

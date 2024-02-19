@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Data.Common;
-using System.Numerics;
 
-namespace FourInRow
+namespace FourInRow.Logic
 {
     public class GameController
     {
@@ -55,10 +53,10 @@ namespace FourInRow
             bool validColumn = false;
             if (i_Column < 0)
             {
-                IsQuit(i_NumOfPlayer);
+                isQuit(i_NumOfPlayer);
                 validColumn = true;
             }
-            else if (i_Column != 0 && UpdateMatrix(i_Column, i_NumOfPlayer))
+            else if (i_Column != 0 && updateMatrix(i_Column, i_NumOfPlayer))
             {
                 validColumn = true;
             }
@@ -69,7 +67,7 @@ namespace FourInRow
             return validColumn;
         }
 
-        private bool UpdateMatrix(int i_Column, int i_NumOfPlayer)
+        private bool updateMatrix(int i_Column, int i_NumOfPlayer)
         {
             bool validColumn = false;
             for (int i = m_RowsOfBoard - 1; i >= 0; i--)
@@ -103,19 +101,19 @@ namespace FourInRow
         public int IsGameOver(int i_NumOfPlayer)
         {
             int isGameOverSign = 0;
-            if (IsWinner(i_NumOfPlayer))
+            if (isWinner(i_NumOfPlayer))
             {
                 isGameOverSign = 1;
             }
-            else if (IsDraw())
+            else if (isDraw())
             {
-                RestartGame();
+                restartGame();
                 isGameOverSign = 2;
             }
             return isGameOverSign;
         }
 
-        public bool IsWinner(int i_NumOfPlayer)
+        private bool isWinner(int i_NumOfPlayer)
         {
             bool isWinner = false;
             // Check horizontal
@@ -179,14 +177,14 @@ namespace FourInRow
             }
             if (isWinner)
             {
-                IsQuit(i_NumOfPlayer == 1 ? 2 : 1);
+                isQuit(i_NumOfPlayer == 1 ? 2 : 1);
             }
 
             return isWinner;
         }
 
 
-        private bool IsDraw()
+        private bool isDraw()
         {
             bool isFull = true;
 
@@ -203,9 +201,9 @@ namespace FourInRow
             return isFull;
         }
 
-        private void IsQuit(int i_NumOfPlayer)
+        private void isQuit(int i_NumOfPlayer)
         {
-            RestartGame();
+            restartGame();
 
             if (m_Player1.NumOfPlayer == i_NumOfPlayer)
             {
@@ -218,7 +216,7 @@ namespace FourInRow
 
         }
 
-        private void RestartGame()
+        private void restartGame()
         {
             Array.Clear(m_BoardMatrix, 0, m_BoardMatrix.Length);
         }
@@ -231,9 +229,9 @@ namespace FourInRow
             int columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
 
             while (!IsValidMakeMove(columnRandomed, 2, out o_FullCapacity) || o_FullCapacity)
-            {
-                columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
-            }
+                {
+                    columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
+                }
         }
     }
  

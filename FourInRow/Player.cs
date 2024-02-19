@@ -1,4 +1,4 @@
-﻿namespace FourInRow
+﻿namespace FourInRow.Logic
 {
     public class Player
     {

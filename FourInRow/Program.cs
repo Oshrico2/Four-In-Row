@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-using FourInRow;
-using static FourInRow.GameController;
+using FourInRow.UI;
+using FourInRow.Logic;
 
 public class Program
 {
@@ -144,6 +143,10 @@ public class Program
         {
             GameUI.DisplayScreen(i_Game.BoardMatrix);
             PlayNewGame(ref i_Game);
+        }
+        else
+        {
+            Environment.Exit(1);
         }
     }
 }
