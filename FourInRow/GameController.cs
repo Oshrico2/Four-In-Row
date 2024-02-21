@@ -37,20 +37,20 @@ namespace FourInRow.Logic
 
         public GameController(int i_Rows, int i_Cols, bool i_GameMode)
         {
+            m_BoardMatrix = new int[i_Rows, i_Cols];
+            m_Player1 = new Player(1);
+            m_Player2 = new Player(2);
+
             this.m_RowsOfBoard = i_Rows;
             this.m_ColsOfBoard = i_Cols;
             this.m_GameMode = i_GameMode;
-
-            m_BoardMatrix = new int[i_Rows, i_Cols];
-
-            m_Player1 = new Player(1);
-            m_Player2 = new Player(2);
         }
 
-        public bool IsValidMakeMove(int i_Column, int i_NumOfPlayer, out bool fullCapacity)
+        public bool IsValidMakeMove(int i_Column, int i_NumOfPlayer, out bool o_FullCapacity)
         {
-            fullCapacity = false;
+            o_FullCapacity = false;
             bool validColumn = false;
+
             if (i_Column < 0)
             {
                 validColumn = true;
@@ -62,14 +62,16 @@ namespace FourInRow.Logic
             }
             else
             {
-                fullCapacity = i_Column != 0;
+                o_FullCapacity = i_Column != 0;
             }
+
             return validColumn;
         }
 
         private bool updateMatrix(int i_Column, int i_NumOfPlayer)
         {
             bool validColumn = false;
+
             for (int i = m_RowsOfBoard - 1; i >= 0; i--)
             {
                 if (m_BoardMatrix[i, i_Column - 1] == 0)
@@ -79,12 +81,14 @@ namespace FourInRow.Logic
                     break;
                 }
             }
+
             return validColumn;
         }
 
         public bool IsEmptyBoardMatrix()
         {
             bool isEmpty = true;
+
             for (int i = 0; i < m_RowsOfBoard; i++)
             {
                 for (int j = 0; j < m_ColsOfBoard; j++)
@@ -95,12 +99,14 @@ namespace FourInRow.Logic
                     }
                 }
             }
+
             return isEmpty;
         }
 
         public int IsGameOver(int i_NumOfPlayer)
         {
             int isGameOverSign = 0;
+
             if (isWinner(i_NumOfPlayer))
             {
                 isGameOverSign = 1;
@@ -110,12 +116,14 @@ namespace FourInRow.Logic
                 restartGame();
                 isGameOverSign = 2;
             }
+
             return isGameOverSign;
         }
 
         private bool isWinner(int i_NumOfPlayer)
         {
             bool isWinner = false;
+
             // Check horizontal
             for (int row = 0; row < m_RowsOfBoard; row++)
             {
@@ -175,6 +183,7 @@ namespace FourInRow.Logic
                     }
                 }
             }
+
             if (isWinner)
             {
                 isQuit(i_NumOfPlayer == 1 ? 2 : 1);
@@ -182,7 +191,6 @@ namespace FourInRow.Logic
 
             return isWinner;
         }
-
 
         private bool isDraw()
         {
@@ -198,6 +206,7 @@ namespace FourInRow.Logic
                     }
                 }
             }
+
             return isFull;
         }
 
@@ -213,7 +222,6 @@ namespace FourInRow.Logic
             {
                 m_Player1.Winner();
             }
-
         }
 
         private void restartGame()
@@ -224,15 +232,13 @@ namespace FourInRow.Logic
         public void MakeComputerMove()
         {
             bool o_FullCapacity;
-
             Random rand = new Random();
             int columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
 
             while (!IsValidMakeMove(columnRandomed, 2, out o_FullCapacity) || o_FullCapacity)
-                {
-                    columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
-                }
+            {
+                columnRandomed = rand.Next(1, m_ColsOfBoard + 1);
+            }
         }
     }
- 
 }

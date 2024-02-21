@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-//using Ex02.ConsoleUtils;
+using Ex02.ConsoleUtils;
 
 namespace FourInRow.UI
 {
@@ -19,6 +19,7 @@ namespace FourInRow.UI
         {
             int input;
             string inputStr;
+
             while (!int.TryParse(inputStr = Console.ReadLine(), out input) || input < i_Min || input > i_Max)
             {
                 if (inputStr.ToLower() == "q")
@@ -26,15 +27,20 @@ namespace FourInRow.UI
                     input = -1;
                     break;
                 }
+
                 Console.WriteLine($"Please enter a number between {i_Min} and {i_Max}: ");
             }
+
             return input;
         }
 
         public static bool ChooseOpponent()
         {
+            string input;
+
             Console.WriteLine("Do you want to play against the computer? (Y/Any other key)");
-            string input = Console.ReadLine().ToUpper();
+            input = Console.ReadLine().ToUpper();
+
             return input == "Y";
         }
 
@@ -42,8 +48,7 @@ namespace FourInRow.UI
         {
             string equalSigns = new string('=', i_Matrix.GetLength(1) * 4 + 1);
 
-            Console.Clear();
-
+            Screen.Clear();
             for (int i = 1; i <= i_Matrix.GetLength(1); i++)
             {
                 if (i == 1)
@@ -51,36 +56,40 @@ namespace FourInRow.UI
                     Console.Write("  1");
                     continue;
                 }
+
                 Console.Write($"   {i.ToString()}");
             }
-            Console.WriteLine();
 
+            Console.WriteLine();
             for (int i = 0; i < i_Matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < i_Matrix.GetLength(1); j++)
                 {
                     Console.Write("| " + (i_Matrix[i, j] == 0 ? " " : i_Matrix[i, j] == 1 ? "X" : "O") + " ");
                 }
+
                 Console.WriteLine("|");
                 Console.WriteLine(equalSigns);
             }
+
             Console.WriteLine();
         }
 
         public static bool AskForAnotherGame()
         {
             bool askForAnotherGame = false;
+            string input;
+
             Console.WriteLine("Would you like to play another game? (Y/Any other key)");
-            string input = Console.ReadLine().ToUpper();
+            input = Console.ReadLine().ToUpper();
+
             if (input == "Y")
             {
                 askForAnotherGame = true;
             }
-            //else
-            //{
-            //    Environment.Exit(1);
-            //}
-            Console.Clear();
+
+            Screen.Clear();
+
             return askForAnotherGame;
         }
     }

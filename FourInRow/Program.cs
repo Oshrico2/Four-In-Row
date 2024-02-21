@@ -12,11 +12,14 @@ public class Program
     public static void RunProgram()
     {
         int rows, cols;
+        bool playAgainstComputer;
+        GameController game;
+
         Console.WriteLine("Welcome to Four in a Row!");
         GameUI.GetBoardSize(out rows, out cols);
-        bool playAgainstComputer = GameUI.ChooseOpponent();
 
-        GameController game = new GameController(rows, cols, playAgainstComputer);
+        playAgainstComputer = GameUI.ChooseOpponent();
+        game = new GameController(rows, cols, playAgainstComputer);
         GameUI.DisplayScreen(game.BoardMatrix);
 
         PlayNewGame(ref game);
@@ -25,6 +28,7 @@ public class Program
     public static void PlayNewGame(ref GameController i_Game)
     {
         GameUI.DisplayScreen(i_Game.BoardMatrix);
+
         if (!i_Game.GameMode)
         {
             Console.WriteLine("\nStart a two player game Press q whenever you want to quit.");
@@ -48,13 +52,15 @@ public class Program
         int playerSign = 1;
         int input;
         bool playAnotherMove = true;
-        bool o_FullCapacity;
+        bool fullCapacity;
+
         while (playerSign <= 2)
         {
             input = 0;
-            while (!i_Game.IsValidMakeMove(input, playerSign, out o_FullCapacity))
+
+            while (!i_Game.IsValidMakeMove(input, playerSign, out fullCapacity))
             {
-                if (o_FullCapacity)
+                if (fullCapacity)
                 {
                     Console.WriteLine("The column is full, choose another column.");
                 }
@@ -62,14 +68,16 @@ public class Program
                 {
                     Console.WriteLine($"Player {playerSign}, enter a column please: ");
                 }
+
                 input = GameUI.GetNumberInput(1, i_Game.BoardMatrix.GetLength(1));
             }
+
             input = 0;
             GameUI.DisplayScreen(i_Game.BoardMatrix);
-            
             HandleGameOver(ref i_Game, playerSign);
             playerSign++;
         }
+
         return playAnotherMove;
     }
 
@@ -77,10 +85,11 @@ public class Program
     {
         int input = 0;
         bool playAnotherMove = true;
-        bool o_FullCapacity;
-        while (!i_Game.IsValidMakeMove(input, 1, out o_FullCapacity))
+        bool fullCapacity;
+
+        while (!i_Game.IsValidMakeMove(input, 1, out fullCapacity))
         {
-            if (o_FullCapacity)
+            if (fullCapacity)
             {
                 Console.WriteLine("The column is full, choose another column.");
             }
@@ -90,19 +99,8 @@ public class Program
             }
             input = GameUI.GetNumberInput(1, i_Game.BoardMatrix.GetLength(1));
         }
+
         HandleGameOver(ref i_Game, 1);
-        //if (i_Game.IsEmptyBoardMatrix())
-        //{
-        //    Console.WriteLine($"Computer Win!\nState of record:\nPlayer : {i_Game.Player1.Record}\tComputer : {i_Game.Player2.Record}");
-        //    if (GameUI.AskForAnotherGame())
-        //    {
-        //        PlayNewGame(ref i_Game);
-        //    }
-        //    else
-        //    {
-        //        playAnotherMove = false;
-        //    }
-        //}
         if (playAnotherMove)
         {
             i_Game.MakeComputerMove();
@@ -113,28 +111,31 @@ public class Program
         return playAnotherMove;
     }
 
-    public static void HandleGameOver(ref GameController i_Game, int playerSign)
+    public static void HandleGameOver(ref GameController i_Game, int i_PlayerSign)
     {
         int oppositePlayerSign;
         bool gameFinshed = false;
         bool askForAnotherGame = false;
-        int gameOverSign;
+        int gameOverSign = 0;
 
         GameUI.DisplayScreen(i_Game.BoardMatrix);
 
         if (i_Game.IsEmptyBoardMatrix()) //someone quit
         {
-            oppositePlayerSign = playerSign == 1 ? 2 : 1;
+            oppositePlayerSign = i_PlayerSign == 1 ? 2 : 1;
             Console.WriteLine($"Player {oppositePlayerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
             askForAnotherGame = GameUI.AskForAnotherGame();
             gameFinshed = true;
         }
 
-        gameOverSign = i_Game.IsGameOver(playerSign);
+        if (!gameFinshed)
+        {
+            gameOverSign = i_Game.IsGameOver(i_PlayerSign);
+        }
 
         if (gameOverSign == 1)
         {
-            Console.WriteLine($"Player {playerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
+            Console.WriteLine($"Player {i_PlayerSign} Win!\nState of record:\nPlayer 1 : {i_Game.Player1.Record}\tPlayer 2 : {i_Game.Player2.Record}");
             askForAnotherGame = GameUI.AskForAnotherGame();
             gameFinshed = true;
         }
@@ -144,16 +145,17 @@ public class Program
             askForAnotherGame = GameUI.AskForAnotherGame();
             gameFinshed = true;
         }
+
         if (askForAnotherGame)
         {
             GameUI.DisplayScreen(i_Game.BoardMatrix);
             PlayNewGame(ref i_Game);
         }
+
         if (gameFinshed)
         {
             Console.WriteLine("Thank you for playing");
             Environment.Exit(1);
         }
-
     }
 }
